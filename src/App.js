@@ -1,10 +1,10 @@
 import "./App.css";
-import LocationStore from "./components/LocationStore";
+import ImageSelector from "./components/ImageSelector";
 
 function App() {
   return (
     <>
-      <LocationStore />
+      <ImageSelector />
     </>
   );
 }
