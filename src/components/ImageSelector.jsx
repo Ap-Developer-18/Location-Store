@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import bgImage from '../assets/webp/bg-img.webp'
 
 const ImageSelector = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [imagePath, setImagePath] = useState('');
-
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
+    const [selectedImage, setSelectedImage] = useState();
+    const [imagePath, setImagePath] = useState(true);
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
         if (file) {
             const imageUrl = URL.createObjectURL(file);
             setSelectedImage(imageUrl);
@@ -23,9 +22,10 @@ const ImageSelector = () => {
                     <label className="cursor-pointer border border-black rounded-lg flex justify-center items-center h-full">
                         {selectedImage ? (
                             <img src={selectedImage} alt="Selected" className="w-full h-full object-cover rounded-lg" />
-                        ) : (
-                            <span className="text-black text-2xl sm:text-3xl md:text-4xl font-semibold">Select your image</span>
-                        )}
+                        ) :
+                            (
+                                <span className="text-black text-2xl sm:text-3xl md:text-4xl font-semibold">Select your image</span>
+                            )}
                         <input
                             type="file"
                             accept="image/*"
