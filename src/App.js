@@ -1,10 +1,11 @@
-import './App.css';
+import "./App.css";
+import LocationStore from "./components/LocationStore";
 
 function App() {
   return (
-    <div>
-
-    </div>
+    <>
+      <LocationStore />
+    </>
   );
 }
 
